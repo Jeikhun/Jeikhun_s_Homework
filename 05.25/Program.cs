@@ -1,38 +1,66 @@
-﻿using System;
+using System;
 
-namespace ConsoleApp1
+namespace ConsoleApp13
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
-        {  
-            Console.WriteLine("Username qeyd edin");
-            string username = Console.ReadLine();
+        {
+            int counter = 0;
+            Console.WriteLine("Username daxil edin");
+            string Username=Console.ReadLine();
+            Console.WriteLine("Password daxil  edin");
+            string Password=Console.ReadLine();
 
-           
-            
-            
-            Console.WriteLine("Password qeyd edin");
-            string password = Console.ReadLine();
-
-            User[] users = { new Student("Jeikhun", "Jalilov", "ceyhunjalil", "jyhun267", "A"),
-                             new Student("Ali", "Veliyev", "vlyvali", "ali348", "B"),
-                             new User("Xasay", "Musayev", "xsymsyv", "xsy893") };
-
-
-
-
-            bool flag = false;
-            foreach (var item in users)
+            User Jeikhun = new Student()
             {
-                if (username == item.Username && password == item.Password)
-                {
-                    flag = true;
-                    item.WhoIs();
+                Name = "Jeikhun",
+                Surname = "Jalilov",
+                Username = "ceyhunjalil",
+                Password = "ceyhun2002",
+                Grade = 97
+            };
 
+            User Xasay = new User()
+            {
+                Name = "Xasay",
+                Surname = "Musayev",
+                Username = "xasayum",
+                Password = "xasay2002",
+                
+            };
+
+            User Cavid = new Student()
+            {
+                Name = "Cavid",
+                Surname = "Ibrahimli",
+                Username = "cavidabraham",
+                Password = "cavid2002",
+                Grade = 100
+            };
+
+            User Emrah = new User()
+            {
+                Name = "Emrah",
+                Surname = "Soltanov",
+                Username = "emrahsoltan",
+                Password = "emrah2002"
+            };
+
+            User[] users = {Jeikhun, Xasay, Emrah, Cavid}; 
+            foreach (var user in users)
+            {
+                if (Username == user.Username && Password==user.Password)
+                {
+                    counter++;
+                    user.PrintGrade();
                 }
             }
-            if (!flag) Console.WriteLine("Bu username ve passwordda User yoxdur...");
+            if (counter == 0)
+            {
+                Console.WriteLine("Username yaxud shifre yanlishdir");
+                return;
+            }
         }
     }
 }
