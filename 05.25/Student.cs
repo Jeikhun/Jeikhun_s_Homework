@@ -1,23 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp13
 {
-    public class Student : User
+    internal class Student:User
     {
-        public Student(string name, string surname, string username, string password, string grade)
-            : base(name, surname, username, password)
-        {
-            Grade = grade;
-        }
-        public string Grade;
-        public override void WhoIs()
-        {
+        public int Grade;
 
-            Console.WriteLine($"Imtahan bali={Grade}");
+        public override void PrintGrade()
+        {
+            Console.WriteLine(Grade);
         }
     }
 }
