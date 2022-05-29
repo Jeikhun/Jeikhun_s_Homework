@@ -15,9 +15,9 @@ namespace ConsoleApp1
             Console.WriteLine("Password qeyd edin");
             string password = Console.ReadLine();
 
-            User[] users = { new Student("Tural", "Ismayilov", "turalismylv", "tural123", "A"),
-                             new Student("Murad", "Alcanov", "muradacn", "murad123", "B"),
-                             new User("Emil", "Quluzade", "emilquluzade", "emil123") };
+            User[] users = { new Student("Jeikhun", "Jalilov", "ceyhunjalil", "jyhun267", "A"),
+                             new Student("Ali", "Veliyev", "vlyvali", "ali348", "B"),
+                             new User("Xasay", "Musayev", "xsymsyv", "xsy893") };
 
 
 
@@ -32,7 +32,7 @@ namespace ConsoleApp1
 
                 }
             }
-            if (!flag) Console.WriteLine("Bu username ve passwordda User yoxdur!");
+            if (!flag) Console.WriteLine("Bu username ve passwordda User yoxdur...");
         }
     }
 }
