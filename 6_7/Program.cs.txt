@@ -1,0 +1,88 @@
+using System;
+
+namespace ConsoleApp17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            Shop<Coffee> yy = new Shop<Coffee>();
+            yy.AddProduct(new Coffee { Name = "Latte" });
+            Shop<Tea> aa = new Shop<Tea>();
+            aa.AddProduct(new Tea { Name = "GreenTea" });
+
+            yy.Sell();
+
+        }
+
+        static void Choose()
+        {
+            Console.WriteLine("1.Product elave edin:");
+            Console.WriteLine("2.Product secin:");
+            string choosestr = Console.ReadLine();
+            int choose = int.Parse(choosestr);
+            switch (choose)
+            {
+                case 1:
+                    string Name = Console.ReadLine();
+                Count:
+                    string countstr = Console.ReadLine();
+                    bool countb = int.TryParse(countstr, out int num);
+                    if (!countb)
+                    {
+                        Console.WriteLine("duzgun daxil edin:");
+                        goto Count;
+                    }int count = num;
+                    break;
+
+
+                case 2:
+
+                    break;
+            }
+        }
+    }
+    class Shop<T>
+    {
+        
+        T[] product = new T[0]; 
+
+        public void AddProduct(T t)
+        {
+            Array.Resize(ref product, product.Length + 1);
+            product[product.Length - 1] = t;
+        }
+
+        public void Sell(T t)
+        {
+            Array.Resize(ref product, product.Length - 1);
+            Console.WriteLine("Mehsul satildi");
+        }
+        public string TotalIncome;
+
+        
+
+    }
+
+    class Coffee
+    {
+        public string Name;
+        public int Count;
+        public int Price;
+    }
+
+    class Tea
+    {
+        public string Name;
+        public int Count;
+        public int Price;
+    }
+
+    enum Drink
+    {
+        Coffe,
+        Tea
+    }
+
+}
